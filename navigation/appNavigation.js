@@ -10,10 +10,10 @@ const Stack = createStackNavigator();
 export default function AppNavigation() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
-      <Stack.Screen name="FriendsScreen" component={FriendsScreen} />
-      <Stack.Screen name="ChatScreen" component={ChatScreen} />
+      <Stack.Screen options={{headerShown: false}} name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen options={{headerShown: false}} name="ProfileScreen" component={ProfileScreen} />
+      <Stack.Screen options={{headerShown: false}} name="FriendsScreen" component={FriendsScreen} />
+      <Stack.Screen options={{headerShown: false}} name="ChatScreen" component={ChatScreen} />
     </Stack.Navigator>
   );
 }
