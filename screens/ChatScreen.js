@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   chatList: {
     padding: 20,
-    marginBottom: 8
+    marginTop: 7
   },
   chatItem: {
     marginBottom: 16,

@@ -51,9 +51,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     alignItems: 'center',
-    // backgroundColor: '#efefef',
     flex: 4,
-    // height: '72.5%',
     width: '100%',
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
@@ -72,12 +70,14 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
   },
   name: {
-    fontSize: 16,
+    fontSize: 23,
     fontWeight: 'bold',
     marginBottom: 4,
   },
   description: {
     fontSize: 14,
+    marginTop: 1,
+    marginBottom: 5,
     color: '#888888',
   },
 });

@@ -35,9 +35,10 @@ const ProfileScreen = () => {
     <ScreenWrapper style={styles.container}>
       <Text style={styles.title}>Profile</Text>
       <View style={styles.profileContainer}>
-        <Image source={require('../assets/images/pic6.png')} />
+        <Image source={require('../assets/images/pic6.jpg')} />
       </View>
       <Text style={styles.name}>Andrew Chen</Text>
+      <Text style={styles.description}>Thumbs Up: 8 | Thumbs Down: 0 | Green Flag</Text>
       <View style={styles.reviewsContainer}>
         <Text style={styles.reviewsTitle}>Reviews</Text>
         {reviews.map(review => (
@@ -65,6 +66,11 @@ const styles = StyleSheet.create({
     marginTop: 32,
     alignSelf: 'center',
   },
+  description: {
+    fontSize: 16,
+    marginTop: 5,
+    alignSelf: 'center',
+  },
   profileContainer: {
     width: 200,
     height: 200,
@@ -84,7 +90,6 @@ const styles = StyleSheet.create({
   },
   reviewsContainer: {
     width: '80%',
-    marginTop: 8,
     padding: 10,
     borderRadius: 8,
     alignSelf: 'center',

@@ -98,11 +98,11 @@ const HomeScreen = () => {
             {
               color: '#000',
               fontWeight: 'bold',
-              fontSize: 32,
+              fontSize: 43,
               marginTop: 13,
             },
           ]}>
-          Dating App
+          VerifiedVibe
         </Text>
       </View>
       <View>
