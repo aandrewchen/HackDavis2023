@@ -102,7 +102,7 @@ const HomeScreen = () => {
               marginTop: 13,
             },
           ]}>
-          VerifiedVibe
+          SecureSpark
         </Text>
       </View>
       <View>
