@@ -2,27 +2,32 @@ import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import ScreenWrapper from '../components/screenWrapper';
 import NavBar from '../components/NavBar';
-import Reviews from '../components/Reviews';
 
 const ProfileScreen = () => {
   const reviews = [
     {
       id: 1,
-      from: 'John',
-      text: 'This user is a red flag',
-      flag: 'red',
+      from: 'Samantha',
+      text: 'Such a lovely person!',
+      flag: 'lightgreen',
     },
     {
       id: 2,
       from: 'Emily',
       text: 'Great person to hang out with!',
-      flag: 'green',
+      flag: 'lightgreen',
     },
     {
       id: 3,
       from: 'Sarah',
-      text: 'A bit of a pink flag, but overall nice.',
-      flag: 'pink',
+      text: 'I have never had a better first date!',
+      flag: 'lightgreen',
+    },
+    {
+      id: 4,
+      from: 'Jessica',
+      text: 'It was great talking to Andrew :)',
+      flag: 'lightgreen',
     },
   ];
 
@@ -30,15 +35,19 @@ const ProfileScreen = () => {
     <ScreenWrapper style={styles.container}>
       <Text style={styles.title}>Profile</Text>
       <View style={styles.profileContainer}>
-        <Image
-          source={require('../assets/images/pic6.png')}
-          style={styles.profileImage}
-        />
+        <Image source={require('../assets/images/pic6.png')} />
       </View>
-      <Text style={styles.name}>John Doe</Text>
+      <Text style={styles.name}>Andrew Chen</Text>
       <View style={styles.reviewsContainer}>
         <Text style={styles.reviewsTitle}>Reviews</Text>
-        <Reviews reviews={reviews} />
+        {reviews.map(review => (
+          <View
+            key={review.id}
+            style={[styles.reviewItem, {backgroundColor: review.flag}]}>
+            <Text style={styles.reviewFrom}>{review.from}</Text>
+            <Text style={styles.reviewText}>{review.text}</Text>
+          </View>
+        ))}
       </View>
       <NavBar />
     </ScreenWrapper>
@@ -53,7 +62,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     fontWeight: 'bold',
-    marginTop: 30,
+    marginTop: 32,
     alignSelf: 'center',
   },
   profileContainer: {
@@ -65,25 +74,19 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  profileImage: {
-    width: 120,
-    height: 120,
-    borderRadius: 60,
+    overflow: 'hidden',
   },
   name: {
     fontSize: 24,
     fontWeight: 'bold',
     marginTop: 20,
     alignSelf: 'center',
-    textAlign: 'center',
   },
   reviewsContainer: {
     width: '80%',
-    marginTop: 20,
+    marginTop: 8,
     padding: 10,
     borderRadius: 8,
-    backgroundColor: 'white',
     alignSelf: 'center',
   },
   reviewsTitle: {
@@ -91,6 +94,19 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 10,
     textAlign: 'left',
+  },
+  reviewItem: {
+    padding: 10,
+    marginBottom: 10,
+    borderRadius: 8,
+  },
+  reviewFrom: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 5,
+  },
+  reviewText: {
+    fontSize: 16,
   },
 });
 

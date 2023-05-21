@@ -32,7 +32,7 @@ const Card = ({user, isVisible}) => {
       <View style={styles.textContainer}>
         <Text style={styles.name}>{user.name}</Text>
         <Text style={styles.description}>{user.age}</Text>
-        <Text style={styles.description}>{user.hobbies}</Text>
+        <Text style={styles.description}>Hobbies: {user.hobbies}</Text>
       </View>
     </Animated.View>
   );
@@ -65,7 +65,6 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
     resizeMode: 'contain',
-    resizeMethod: 'resize',
   },
   textContainer: {
     flex: 1,
