@@ -30,16 +30,10 @@ const ProfileScreen = () => {
     <ScreenWrapper style={styles.container}>
       <Text style={styles.title}>Profile</Text>
       <View style={styles.profileContainer}>
-        <Image
-          source={require('../assets/images/pic6.png')}
-          style={styles.profileImage}
-        />
+        <Image source={require('../assets/images/pic6.png')} />
       </View>
       <Text style={styles.name}>John Doe</Text>
-      <View style={styles.reviewsContainer}>
-        <Text style={styles.reviewsTitle}>Reviews</Text>
-        <Reviews reviews={reviews} />
-      </View>
+      <Reviews reviews={reviews} />
       <NavBar />
     </ScreenWrapper>
   );
@@ -53,7 +47,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     fontWeight: 'bold',
-    marginTop: 30,
+    marginTop: 80,
     alignSelf: 'center',
   },
   profileContainer: {
@@ -66,31 +60,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  profileImage: {
-    width: 120,
-    height: 120,
-    borderRadius: 60,
-  },
   name: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginTop: 20,
+    marginTop: 10,
     alignSelf: 'center',
     textAlign: 'center',
-  },
-  reviewsContainer: {
-    width: '80%',
-    marginTop: 20,
-    padding: 10,
-    borderRadius: 8,
-    backgroundColor: 'white',
-    alignSelf: 'center',
   },
   reviewsTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 10,
-    textAlign: 'left',
+    marginVertical: 10,
+    alignSelf: 'flex-start',
+    marginLeft: 20,
   },
 });
 

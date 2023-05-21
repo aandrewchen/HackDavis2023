@@ -1,21 +1,40 @@
-import React from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import React, {useEffect, useRef} from 'react';
+import {View, Text, Image, StyleSheet, Animated} from 'react-native';
 
-const Card = ({user}) => {
+const Card = ({user, isVisible}) => {
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    if (isVisible) {
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 300,
+        useNativeDriver: true,
+      }).start();
+    } else {
+      Animated.timing(fadeAnim, {
+        toValue: 0,
+        duration: 300,
+        useNativeDriver: true,
+      }).start();
+    }
+  }, [fadeAnim, isVisible]);
+
+  if (!isVisible) {
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
+    <Animated.View style={[styles.container, {opacity: fadeAnim}]}>
       <View style={styles.imageContainer}>
-        <Image
-          source={require('../assets/images/pic6.png')}
-          style={styles.image}
-        />
+        <Image source={user.image} style={styles.image} />
       </View>
       <View style={styles.textContainer}>
         <Text style={styles.name}>{user.name}</Text>
         <Text style={styles.description}>{user.age}</Text>
         <Text style={styles.description}>{user.hobbies}</Text>
       </View>
-    </View>
+    </Animated.View>
   );
 };
 
@@ -40,13 +59,13 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 8,
     borderBottomLeftRadius: 8,
     borderBottomRightRadius: 8,
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   image: {
     height: '100%',
     width: '100%',
-    resizeMode: "contain",
-    resizeMethod: "resize"
+    resizeMode: 'contain',
+    resizeMethod: 'resize',
   },
   textContainer: {
     flex: 1,
