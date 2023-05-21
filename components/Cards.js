@@ -12,7 +12,8 @@ const Card = ({user}) => {
       </View>
       <View style={styles.textContainer}>
         <Text style={styles.name}>{user.name}</Text>
-        <Text style={styles.age}>{user.age}</Text>
+        <Text style={styles.description}>{user.age}</Text>
+        <Text style={styles.description}>{user.hobbies}</Text>
       </View>
     </View>
   );
@@ -20,7 +21,6 @@ const Card = ({user}) => {
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'lightblue',
     borderRadius: 16,
@@ -30,7 +30,8 @@ const styles = StyleSheet.create({
     height: 500,
   },
   imageContainer: {
-    height: '66.67%',
+    height: '80%',
+    width: '50%',
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
     borderBottomLeftRadius: 8,
@@ -38,7 +39,6 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   image: {
-    flex: 1,
     resizeMode: 'cover',
   },
   textContainer: {
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 4,
   },
-  age: {
+  description: {
     fontSize: 14,
     color: '#888888',
   },
