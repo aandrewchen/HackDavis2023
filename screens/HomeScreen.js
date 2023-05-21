@@ -1,42 +1,20 @@
-import {View, Text, TouchableOpacity, Image, FlatList} from 'react-native';
 import React from 'react';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import ScreenWrapper from '../components/screenWrapper';
-import {colors} from '../themes';
+import { colors } from '../themes';
 import NavBar from '../components/NavBar';
 
-const items = [
-  {
-    id: 1,
-    name: 'Andrew',
-    age: '19',
-  },
-  {
-    id: 2,
-    name: 'Stanley',
-    age: '18',
-  },
-  {
-    id: 2,
-    name: 'Stanley',
-    age: '18',
-  },
-  {
-    id: 2,
-    name: 'Stanley',
-    age: '18',
-  },
-];
-
-export default function HomeScreen() {
+const HomeScreen = () => {
   return (
-    <ScreenWrapper style={{flex: 1}}>
+    <ScreenWrapper style={{ flex: 1 }}>
       <View
         style={{
           flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'center',
           padding: 16,
-        }}>
+        }}
+      >
         <Text
           style={[
             {
@@ -47,16 +25,14 @@ export default function HomeScreen() {
             },
             {
               shadowColor: '#000',
-              shadowOffset: {width: 0, height: 2},
+              shadowOffset: { width: 0, height: 2 },
               shadowOpacity: 0.25,
               shadowRadius: 4,
             },
-          ]}>
+          ]}
+        >
           Dating App
         </Text>
-        {/* <TouchableOpacity style={{ padding: 8, paddingHorizontal: 12, backgroundColor: '#FFF', borderWidth: 1, borderColor: '#C4C4C4', borderRadius: 999 }}>
-          <Text style={{ color: colors.heading }}>Hi</Text>
-        </TouchableOpacity> */}
       </View>
       <View
         style={{
@@ -69,19 +45,21 @@ export default function HomeScreen() {
           marginBottom: 16,
           marginTop: 15,
           height: 500,
-        }}>
+        }}
+      >
         <Image
           source={require('../assets/images/pic6.png')}
-          style={{width: 300, height: 300}}
+          style={{ width: 300, height: 300 }}
         />
       </View>
-      <View style={{paddingHorizontal: 16, marginBottom: 16}}>
+      <View style={{ paddingHorizontal: 16, marginBottom: 16 }}>
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
-          }}>
+          }}
+        >
           <TouchableOpacity
             style={{
               width: 60,
@@ -93,8 +71,9 @@ export default function HomeScreen() {
               justifyContent: 'center',
               alignItems: 'center',
               marginLeft: 5,
-            }}>
-            <Text style={{color: colors.heading}}>HEY</Text>
+            }}
+          >
+            <Text style={{ color: colors.heading }}>HEY</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={{
@@ -107,13 +86,22 @@ export default function HomeScreen() {
               justifyContent: 'center',
               alignItems: 'center',
               marginRight: 5,
-            }}>
-            <Text style={{color: colors.heading}}>HEY</Text>
+            }}
+          >
+            <Text style={{ color: colors.heading }}>HEY</Text>
           </TouchableOpacity>
         </View>
-        <View>
-          <NavBar />
-        </View>
+      </View>
+      <NavBar />
+    </ScreenWrapper>
+  );
+};
+
+export default HomeScreen;
+
+
+
+{/* <NavBar /> */}
         {/* <View style={{ height: 430 }}>
           <FlatList
             data={items}
@@ -135,7 +123,7 @@ export default function HomeScreen() {
             }}
           />
         </View> */}
-      </View>
-    </ScreenWrapper>
-  );
-}
+
+        {/* <TouchableOpacity style={{ padding: 8, paddingHorizontal: 12, backgroundColor: '#FFF', borderWidth: 1, borderColor: '#C4C4C4', borderRadius: 999 }}>
+          <Text style={{ color: colors.heading }}>Hi</Text>
+        </TouchableOpacity> */}
