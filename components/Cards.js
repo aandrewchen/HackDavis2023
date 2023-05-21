@@ -21,6 +21,7 @@ const Card = ({user}) => {
 
 const styles = StyleSheet.create({
   container: {
+    flexDirection: 'column',
     alignItems: 'center',
     backgroundColor: 'lightblue',
     borderRadius: 16,
@@ -30,18 +31,25 @@ const styles = StyleSheet.create({
     height: 500,
   },
   imageContainer: {
-    height: '80%',
-    width: '50%',
+    alignItems: 'center',
+    // backgroundColor: '#efefef',
+    flex: 4,
+    // height: '72.5%',
+    width: '100%',
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
     borderBottomLeftRadius: 8,
     borderBottomRightRadius: 8,
-    overflow: 'hidden',
+    overflow: 'hidden'
   },
   image: {
-    resizeMode: 'cover',
+    height: '100%',
+    width: '100%',
+    resizeMode: "contain",
+    resizeMethod: "resize"
   },
   textContainer: {
+    flex: 1,
     paddingHorizontal: 16,
     paddingVertical: 12,
   },
